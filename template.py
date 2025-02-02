@@ -1,6 +1,9 @@
 from typing import Any, Type, Optional, TypeVar, List, Tuple
 from collections import deque
 
+# my code :3
+# https://github.com/ellipticobj/perse-coding
+
 def intinp() -> int:
     '''receives input as integer'''
     return int(input().strip())
