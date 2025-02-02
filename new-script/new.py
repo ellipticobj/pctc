@@ -8,8 +8,11 @@ filename = sys.argv[1]
 
 def newtemplate(source, destdir, name):
     os.makedirs(destdir, exist_ok=True)
-
     destpath = os.path.join(destdir, name)
+
+    if os.path.exists(destpath):
+        print(f"file {destpath} already exists. quitting")
+        sys.exit(1)
 
     shutil.copy(source, destpath)
     print(f"file {source} copied to {destpath}")
