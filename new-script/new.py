@@ -1,7 +1,10 @@
 import shutil
 import os
+import sys
 
 DIR = "2025-round1"
+
+filename = sys.argv[1]
 
 def newtemplate(source, destdir, name):
     os.makedirs(destdir, exist_ok=True)
@@ -12,7 +15,11 @@ def newtemplate(source, destdir, name):
     print(f"file {source} copied to {destpath}")
 
 try:
-    name = input("input file name: ").lower().strip()
+    if filename:
+        name = filename.strip().lower()
+    else:
+        name = input("input file name: ").lower().strip()
+
     if name == "quit":
         raise KeyboardInterrupt("")
     elif name.endswith(".py"):
