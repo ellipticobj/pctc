@@ -16,13 +16,12 @@ def inp() -> str:
     '''receives input'''
     return input()
 
-def linp(sep: Optional[str] = None, typec: Type = int) -> list:
+def linp(sep: Optional[str] = None, typec: Type = str) -> list:
     '''
     sep; separator
     typec: type converter
     '''
-    import sys
-    return list(map(typec, sys.stdin.readline().split(sep)))
+    return list(map(typec, input().split(sep)))
 
 def splitstr(s: str, delim: str = " ") -> list[str]:
     '''splits a string at delim'''
@@ -205,3 +204,5 @@ def issubsequence(s: str, t: str) -> bool:
 def isrot(s1: str, s2: str) -> bool:
     '''checks if s2 is rotation of s1'''
     return len(s1) == len(s2) and s2 in s1 + s1
+
+# !!
