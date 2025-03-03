@@ -2,9 +2,12 @@ import shutil
 import os
 import sys
 
-DIR = "2025-round1"
+DIR = "2025-round2"
 
-filename = sys.argv[1]
+try:
+    filename = sys.argv[1]
+except:
+    filename = ""
 
 def newtemplate(source, destdir, name):
     os.makedirs(destdir, exist_ok=True)
